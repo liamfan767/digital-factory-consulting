@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 200 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 15% 15%;
+
+    --primary: 197 47% 27%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 197 20% 96%;
+    --secondary-foreground: 197 47% 27%;
+
+    --muted: 200 10% 96%;
+    --muted-foreground: 200 10% 45%;
+
+    --accent: 35 80% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 200 10% 90%;
+    --input: 200 10% 90%;
+    --ring: 197 47% 27%;
+
+    --radius: 0.5rem;
+
+    --teal-dark: 197 55% 20%;
+    --teal-primary: 197 47% 27%;
+    --teal-light: 197 35% 45%;
+    --orange-accent: 35 80% 58%;
+  }
+
+  .dark {
+    --background: 200 15% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 200 15% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 200 15% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 197 47% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 15% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 200 15% 20%;
+    --muted-foreground: 200 10% 60%;
+
+    --accent: 35 80% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 200 15% 20%;
+    --input: 200 15% 20%;
+    --ring: 197 47% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .btn-primary {
+    @apply bg-[hsl(var(--accent))] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-opacity;
+  }
+
+  .btn-outline {
+    @apply border-2 border-[hsl(var(--primary))] text-[hsl(var(--primary))] px-6 py-3 rounded-md font-medium hover:bg-[hsl(var(--primary))] hover:text-white transition-colors;
+  }
+
+  .card-service {
+    @apply bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--teal-light))] bg-clip-text text-transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--teal-dark));
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
